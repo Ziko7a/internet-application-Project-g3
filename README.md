@@ -1,7 +1,7 @@
 # internet-application-Project-
 
 ## intoduction 
-### **this project is about food recipes around different parts of the world with tutorial on how to make them step by step details and video ** 
+### this project is about food recipes around different parts of the world with tutorial on how to make them step by step details and video 
 
 ## members:
 <ol>
