@@ -1,4 +1,4 @@
-# internet-application-Project-
+# internet-application-Project-G3
 
 ## intoduction 
 ### this project is about food recipes around different parts of the world with tutorial on how to make them step by step details and video 
