@@ -47,38 +47,35 @@
 
   <!-- Content -->
   <br><br><br>
-  <br><br><br>
-  
+
   <h1>mobiles page</h1>
   <p>this page contains all mbile's data from <code>mobile-data.js</code> </p>
+  <style>
+    table, th, td {
+      border:1px solid black;
+    }
+    </style>
   <table >
-    <tr>
-        <th>Name</th>
-        <th>Describtiion</th>
-        <th>Price</th>
-    </tr>
-    <tbody id="mobile"></tbody> 
+      <tr>
+          <th>Name</th>
+          <th>Describtiion</th>
+          <th>Price</th>
+      </tr>
+      <tbody id="Mobile"></tbody> 
   </table>
   <script> 
-
-    var mobile = document.getElementById('mobile');
-    for (var i = 0; i < Object.keys(mobile).length; i++) 
-    {
-        var tr = <tr>
-                                <td>${mobile[i].title}</td>
-                                <td>${mobile[i].desc}</td>
-                                <td>${mobile[i].price}</td>
-                          </tr>
-            mobile.innerHTML += tr;
-    }
-  </script>
-  <br><br><br>
-  <br><br><br>
-  <br><br><br>
-  <br><br><br>
-  <br><br><br>
-  <br><br><br>
-  <br><br><br>
+  
+  var Mobile = document.getElementById('Mobile');
+  for (var i = 0; i < Object.keys(mobiles).length; i++) {
+      var tr = `<tr>
+                              <td>${mobiles[i].title}</td>
+                              <td>${mobiles[i].desc}</td>
+                              <td>${mobiles[i].price}</td>
+                        </tr>`
+          Mobile.innerHTML += tr;
+          console.log(Mobile)
+  }
+      </script> 
   <br><br><br>
   <br><br><br>
   <!-- Footer -->
