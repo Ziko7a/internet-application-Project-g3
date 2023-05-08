@@ -8,3 +8,13 @@
 2.  Ammar Sunbul Omar Basunbul
 3.  Hamzah Mohammed Baras 
 4.  Ammar Yasir Abulola
+
+
+## To Run The Web Follow This Steps:
+Install Flask
+> pip install flask
+
+Create virtual Environment
+> Python -m venv env
+
+Open The 'app.py' File on Browser

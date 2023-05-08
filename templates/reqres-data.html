@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+  {% block myContent %}
+
+  <!-- Content -->
+  <br><br><br>
+  <h1>
+    Reqres-data Page
+  </h1>
+  
+  <p>
+    Generated HTML by javascript
+    JS "for loop" is used to show all data using bootstrap elements.
+    data should be retrieved from 
+    <a href="https://reqres.in/api/users">https://reqres.in/api/users</a>
+  </p> 
+
+<table style="width: 100%;">
+  <tr >
+      <th>ID</th>
+      <th>First</th>
+      <th>Last</th>
+      <th>Email</th>
+  </tr>
+
+  <tbody id="myTable">
+      
+  </tbody>
+</table>
+<script>
+var myList = []
+
+
+$.ajax({
+  type:'GET',
+  url:'https://reqres.in/api/users?page=2',
+  success: function(resp){
+    myList = resp.data
+    buildTable(myList)
+    console.log(myList)
+  }
+})
+
+
+
+function buildTable(data){
+  var table = document.getElementById('myTable')
+
+  for (var i = 0; i < data.length; i++){
+    var row = `<tr>
+            <td>${data[i].id}</td>
+            <td>${data[i].first_name}</td>
+            <td>${data[i].last_name}</td>
+            <td>${data[i].email}</td>
+          </tr>`
+    table.innerHTML += row
+
+
+  }
+}
+
+</script>
+  <br><br><br>
+  <br><br><br>
+  <br><br><br>
+  <br><br><br>
+  <br><br><br>
+  <br><br><br>
+  
+
+  {% endblock %}

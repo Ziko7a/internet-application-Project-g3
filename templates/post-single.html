@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+    {% block myContent %}
+
+        <head>
+            <title>{{ post['title'] }}</title>
+        </head>
+        <body>
+            <!-- Main Content -->
+            {% block myContent %}
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-8 col-md-10 mx-auto">
+                   <h1>Single post</h1>
+                    <p>brings single post data using Jinja code. Data is retrieved from postdata.py</p>
+                 </div>
+                </div>
+              </div>
+              <div class="alert alert-success">
+              <h1>{{ p.title }}</h1>
+              <h3>{{ p.content }}</h3> 
+              <p>{{p.data_posted}}</p>
+              <small>{{p.author}}</small>
+              </div>
+            {% endblock myContent%}
+          
+          </body>
+    {% endblock %}
