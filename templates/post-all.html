@@ -1,17 +1,40 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% extends "layout.html" %}
+  {% block head %}
+  {{ super() }}
+  <title>All Jinja Posts</title>
+  <!-- Favicon no longer needed -->
+  <!-- <link rel="shortcut icon" type="image/jpg" href="static\images\favicon.ico"/> -->
+  {% endblock %}
 
-    {% block myContent %}
+</head>
 
-          <head>
-        <h1>All Posts</h1>
-          </head>
-          <body>
-            {% for post in posts %}
-              <div>
-                <h2>{{ post['title'] }}</h2>
-                <p>By {{ post['author'] }} on {{ post['date_posted'] }}</p>
-                <p>{{ post['content'] }}</p>
-              </div>
-            {% endfor %}
-            
-    {% endblock %}
+<body>
+  <!-- Main Content -->
+  {% block myContent %}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <h1 class="title">{{title}}</h1>
+        <p>brings all posts data using Jinja code. Data is retrieved from postdata.py</p>
+                 
+      </div>
+    </div>
+  </div>
+  {% for p in posts %}
+    <div class="alert alert-success">
+      <h2>{{p['title']}}</h2>
+      <h3> {{p['content']}}</h3>
+      <p>{{p['date_posted']}}</p>
+      <small>{{p['author']}}</small>
+
+    </div>
+
+  {% endfor %}
+
+  {% endblock myContent%}
+
+</body>
