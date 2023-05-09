@@ -55,10 +55,14 @@ def mobile():
 def reqres():
     return render_template('reqres-data.html')
 
-@app.route ("/post/<int:post_id>")
-def post (post_id):
-    post = posts[post_id]
-    return render_template ('post.html]',title=post['title'], p=post)
+@app.route('/posts/<int:post_id>')
+def show_post(post_id):
+    if post_id < len(posts):
+       p = posts[post_id]
+       return render_template('post-single.html',
+       title= f"Post#{post_id}", p = p )
+    else:
+        return render_template('404.html'), 404
 
 @app.route("/json_posts")
 def json_posts():
@@ -68,9 +72,11 @@ def json_posts():
     }
     return dumps(posts)
 
-@app.route('/postall')
-def postall():
-    return render_template('post-all.html', posts=posts)
+@app.route("/posts")
+def home():
+    return render_template('post-all.html',
+                           title='all posts',
+                           posts=posts)
 
 @app.route('/postsingle')
 def postSingle():
