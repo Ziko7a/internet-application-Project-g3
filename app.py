@@ -21,7 +21,7 @@ def send_email():
     mail.send(msg)
     return "Email sent!"
 
-
+app.run(debug=True)
 @app.route("/")
 @app.route("/home")
 def home():
@@ -106,4 +106,3 @@ def err_404(error):
 
 if __name__ == '__main__':
     app.run(debug=True)
-
