@@ -21,7 +21,7 @@ def send_email():
     mail.send(msg)
     return "Email sent!"
 
-app.run(debug=True)
+
 @app.route("/")
 @app.route("/home")
 def home():
@@ -55,14 +55,6 @@ def mobile():
 def reqres():
     return render_template('reqres-data.html')
 
-@app.route('/posts/<int:post_id>')
-def show_post(post_id):
-    if post_id < len(posts):
-       p = posts[post_id]
-       return render_template('post-single.html',
-       title= f"Post#{post_id}", p = p )
-    else:
-        return render_template('404.html'), 404
 
 @app.route("/json_posts")
 def json_posts():
@@ -73,7 +65,7 @@ def json_posts():
     return dumps(posts)
 
 @app.route("/posts")
-def home():
+def posts():
     return render_template('post-all.html',
                            title='all posts',
                            posts=posts)
