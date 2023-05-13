@@ -31,19 +31,19 @@ def home():
 def about():
     return render_template('about.html')
 
-@app.route("/contact")
+@app.route("/contact-us")
 def contact():
     return render_template('contact-us.html')
 
-@app.route("/american")
+@app.route("/americanfoods")
 def american():
     return render_template('americanfoods.html')
 
-@app.route("/chinese")
+@app.route("/chinesefood")
 def chinese():
     return render_template('chinesefood.html')
 
-@app.route("/saudi")
+@app.route("/saudifoods")
 def saudi():
     return render_template('saudifoods.html')
 
@@ -51,7 +51,7 @@ def saudi():
 def mobile():
     return render_template('mobile.html')
 
-@app.route("/reqres")
+@app.route("/reqres-data")
 def reqres():
     return render_template('reqres-data.html')
 
