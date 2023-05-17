@@ -74,7 +74,7 @@ def posts():
 def postSingle():
     return render_template('post-single.html', posts=posts)
 
-@app.route('/postall')
+@app.route('/post/3')
 def postall():
     post = next((p for p in posts if p['id'] == 3), None)
     if post:
