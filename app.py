@@ -74,11 +74,11 @@ def posts():
 def postSingle():
     return render_template('post-single.html', posts=posts)
 
-@app.route('/post/3')
-def postsingle():
+@app.route('/postall')
+def postall():
     post = next((p for p in posts if p['id'] == 3), None)
     if post:
-        return render_template('post-single.html', post=post)
+        return render_template('post-all.html', post=post)
     else:
         return "Post not found."
     
